@@ -1,0 +1,1 @@
+Esto es una grabación para un curso de Platzi, Node.js, estamos usando OpenAI Whisper para transcribir este audio a texto y guardarlo todo a través de Node.js
