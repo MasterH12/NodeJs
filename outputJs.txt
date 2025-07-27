@@ -1,0 +1,685 @@
+Introducción
+Este es un libro sobre cómo instruir a computadoras. Las computadoras son tan
+comunes como los destornilladores hoy en día, pero son bastante más complejas,
+y hacer que hagan lo que quieres no siempre es fácil.
+Si la tarea que tienes para tu computadora es común, bien entendida, como
+mostrarte tu correo electrónico o actuar como una calculadora, puedes abrir
+la aplicación correspondiente y ponerte a trabajar. Pero para tareas únicas o
+abiertas, a menudo no hay una aplicación adecuada.
+Ahí es donde entra en juego la programación. Programar es el acto de construir un programa—un conjunto de instrucciones precisas que le dicen a una
+computadora qué hacer. Debido a que las computadoras son bestias tontas y
+pedantes, programar es fundamentalmente tedioso y frustrante.
+Por suerte, si puedes superar ese hecho—e incluso disfrutar del rigor de
+pensar en términos que las máquinas tontas pueden manejar—programar puede
+ser gratificante. Te permite hacer cosas en segundos que te tomarían una
+eternidad a mano. Es una forma de hacer que tu herramienta informática haga
+cosas que antes no podía hacer. Además, se convierte en un maravilloso juego
+de resolución de acertijos y pensamiento abstracto.
+La mayoría de la programación se realiza con lenguajes de programación. Un
+lenguaje de programación es un lenguaje artificialmente construido utilizado
+para instruir a las computadoras. Es interesante que la forma más efectiva
+que hemos encontrado para comunicarnos con una computadora se base tanto
+en la forma en que nos comunicamos entre nosotros. Al igual que los idiomas
+humanos, los lenguajes informáticos permiten combinar palabras y frases de
+nuevas formas, lo que permite expresar conceptos cada vez más nuevos.
+En un momento dado, las interfaces basadas en lenguaje, como los prompts
+de BASIC y DOS de los años 1980 y 1990, eran el principal método de interactuar con las computadoras. Para el uso informático rutinario, estas se
+han reemplazado en gran medida por interfaces visuales, que son más fáciles de
+aprender pero ofrecen menos libertad. Pero si sabes dónde buscar, los lenguajes
+todavía están ahí. Uno de ellos, JavaScript, está integrado en cada navegador
+web moderno—y por lo tanto está disponible en casi todos los dispositivos.
+1
+Este libro intentará que te familiarices lo suficiente con este lenguaje para
+hacer cosas útiles y entretenidas con él.
+Sobre la programación
+Además de explicar JavaScript, presentaré los principios básicos de la programación. Resulta que programar es difícil. Las reglas fundamentales son simples
+y claras, pero los programas construidos sobre estas reglas tienden a volverse lo
+suficientemente complejos como para introducir sus propias reglas y complejidades. Estás construyendo tu propio laberinto, de alguna manera, y fácilmente
+puedes perderte en él.
+Habrá momentos en los que leer este libro resulte terriblemente frustrante.
+Si eres nuevo en la programación, habrá mucho material nuevo que asimilar.
+Gran parte de este material luego se combinará de maneras que requieren que
+hagas conexiones adicionales.
+Depende de ti hacer el esfuerzo necesario. Cuando te cueste seguir el libro,
+no saques conclusiones precipitadas sobre tus propias capacidades. Estás bien,
+simplemente necesitas seguir adelante. Tómate un descanso, vuelve a leer algo
+de material y asegúrate de leer y comprender los programas de ejemplo y los
+ejercicios. Aprender es un trabajo duro, pero todo lo que aprendas será tuyo y
+facilitará aún más el aprendizaje futuro.
+Cuando la acción se vuelve poco rentable, recopila información;
+cuando la información se vuelve poco rentable, duerme.
+Un programa es muchas cosas. Es un trozo de texto escrito por un programador, es la fuerza directiva que hace que la computadora haga lo que hace, es
+información en la memoria de la computadora, y al mismo tiempo controla las
+acciones realizadas en esta memoria. Las analogías que intentan comparar los
+programas con objetos familiares tienden a quedarse cortas. Una comparación
+vagamente adecuada es comparar un programa con una máquina: suelen estar
+implicadas muchas partes separadas y, para hacer que todo funcione, debemos
+considerar las formas en que estas partes se interconectan y contribuyen a la
+operación del conjunto.
+Una computadora es una máquina física que actúa como anfitriona de estas
+máquinas inmateriales. Las computadoras mismas solo pueden hacer cosas increíblemente sencillas. La razón por la que son tan útiles es que hacen estas
+cosas a una velocidad increíblemente alta. Un programa puede combinar ingeniosamente un número enorme de estas acciones simples para hacer cosas muy
+complicadas.
+2
+Un programa es una construcción del pensamiento. Es gratuito de construir,
+es liviano y crece fácilmente bajo nuestras manos al teclear. Pero a medida
+que un programa crece, también lo hace su complejidad. La habilidad de
+programar es la habilidad de construir programas que no te confundan a ti
+mismo. Los mejores programas son aquellos que logran hacer algo interesante
+mientras siguen siendo fáciles de entender.
+Algunos programadores creen que esta complejidad se gestiona mejor utilizando solo un conjunto pequeño de técnicas bien comprendidas en sus programas. Han compuesto reglas estrictas (“mejores prácticas”) que prescriben la
+forma que deberían tener los programas y se mantienen cuidadosamente dentro
+de su pequeña zona segura.
+Esto no solo es aburrido, es inefectivo. A menudo, nuevos problemas requieren soluciones nuevas. El campo de la programación es joven y aún se está
+desarrollando rápidamente, y es lo suficientemente variado como para tener espacio para enfoques radicalmente diferentes. Hay muchos errores terribles que
+cometer en el diseño de programas, y deberías ir y cometerlos al menos una vez
+para entenderlos. Una noción de cómo es un buen programa se desarrolla con
+la práctica, no se aprende de una lista de reglas.
+Por qué importa el lenguaje
+Al principio, en los inicios de la informática, no existían los lenguajes de programación. Los programas lucían algo así:
+00110001 00000000 00000000
+00110001 00000001 00000001
+00110011 00000001 00000010
+01010001 00001011 00000010
+00100010 00000010 00001000
+01000011 00000001 00000000
+01000001 00000001 00000001
+00010000 00000010 00000000
+01100010 00000000 00000000
+Este es un programa para sumar los números del 1 al 10 y mostrar el resultado:
+1 + 2 + ... + 10 = 55. Podría ejecutarse en una máquina hipotética simple.
+Para programar los primeros ordenadores, era necesario configurar grandes conjuntos de interruptores en la posición correcta o perforar agujeros en tiras de
+cartón y alimentarlos al ordenador. Puedes imaginar lo tedioso y propenso a
+errores que era este procedimiento. Incluso escribir programas simples requería
+mucha astucia y disciplina. Los complejos eran casi inconcebibles.
+3
+Por supuesto, introducir manualmente estos patrones arcanos de bits (los
+unos y ceros) hacía que el programador se sintiera como un mago poderoso. Y
+eso debe valer algo en términos de satisfacción laboral.
+Cada línea del programa anterior contiene una única instrucción. Podría
+escribirse en inglés de la siguiente manera:
+1. Almacena el número 0 en la ubicación de memoria 0.
+2. Almacena el número 1 en la ubicación de memoria 1.
+3. Almacena el valor de la ubicación de memoria 1 en la ubicación de memoria 2.
+4. Resta el número 11 al valor en la ubicación de memoria 2.
+5. Si el valor en la ubicación de memoria 2 es el número 0, continúa con la
+instrucción 9.
+6. Suma el valor de la ubicación de memoria 1 a la ubicación de memoria 0.
+7. Añade el número 1 al valor de la ubicación de memoria 1.
+8. Continúa con la instrucción 3.
+9. Muestra el valor de la ubicación de memoria 0.
+Aunque eso ya es más legible que la sopa de bits, sigue siendo bastante confusa. Usar nombres en lugar de números para las instrucciones y las ubicaciones
+de memoria ayuda:
+Establecer “total” en 0.
+Establecer “count” en 1.
+[bucle]
+Establecer “compare” en “count”.
+Restar 11 de “compare”.
+Si “compare” es cero, continuar en [fin].
+Sumar “count” a “total”.
+Añadir 1 a “count”.
+Continuar en [bucle].
+[fin]
+Mostrar “total”.
+¿Puedes ver cómo funciona el programa en este punto? Las dos primeras líneas
+asignan los valores iniciales a dos ubicaciones de memoria: total se utilizará
+para construir el resultado de la computación, y count llevará la cuenta del
+4
+número que estamos observando en ese momento. Las líneas que utilizan
+compare probablemente sean las más confusas. El programa quiere ver si count
+es igual a 11 para decidir si puede dejar de ejecutarse. Debido a que nuestra
+máquina hipotética es bastante primitiva, solo puede comprobar si un número
+es cero y tomar una decisión en función de ese valor. Por lo tanto, utiliza
+la ubicación de memoria etiquetada como compare para calcular el valor de
+count - 11 y tomar una decisión basada en ese valor. Las siguientes dos líneas
+suman el valor de count al resultado e incrementan count en 1 cada vez que
+el programa decide que count aún no es 11. Aquí está el mismo programa en
+JavaScript:
+let total = 0, count = 1;
+while (count <= 10) {
+total += count;
+count += 1;
+}
+console.log(total);
+// → 55
+Esta versión nos proporciona algunas mejoras. Lo más importante es que ya
+no es necesario especificar la forma en que queremos que el programa salte
+hacia adelante y hacia atrás; la construcción while se encarga de eso. Continúa
+ejecutando el bloque (entre llaves) debajo de él siempre y cuando se cumpla la
+condición que se le ha dado. Esa condición es count <= 10, lo que significa “el
+recuento es menor o igual a 10”. Ya no tenemos que crear un valor temporal y
+compararlo con cero, lo cual era simplemente un detalle no interesante. Parte
+del poder de los lenguajes de programación es que pueden encargarse de los
+detalles no interesantes por nosotros.
+Al final del programa, después de que la construcción while haya terminado,
+se utiliza la operación console.log para escribir el resultado.
+Finalmente, así es como podría verse el programa si tuviéramos a nuestra
+disposición las operaciones convenientes rango y suma, que respectivamente
+crean una colección de números dentro de un rango y calculan la suma de una
+colección de números:
+console.log(suma(rango(1, 10)));
+// → 55
+La moraleja de esta historia es que el mismo programa puede expresarse de
+formas largas y cortas, ilegibles y legibles. La primera versión del programa
+era extremadamente críptica, mientras que esta última es casi en inglés: registra
+(log) la suma del rango de números del 1 al 10. (Veremos en capítulos posteriores
+5
+cómo definir operaciones como suma y rango.)
+Un buen lenguaje de programación ayuda al programador al permitirle hablar
+sobre las acciones que la computadora debe realizar a un nivel más alto. Ayuda
+a omitir detalles, proporciona bloques de construcción convenientes (como
+while y console.log), te permite definir tus propios bloques de construcción
+(como suma y rango), y hace que esos bloques sean fáciles de componer.
+¿Qué es JavaScript?
+JavaScript fue introducido en 1995 como una forma de agregar programas a
+páginas web en el navegador Netscape Navigator. Desde entonces, el lenguaje
+ha sido adoptado por todos los demás navegadores web gráficos principales.
+Ha hecho posibles aplicaciones web modernas, es decir, aplicaciones con las
+que puedes interactuar directamente sin tener que recargar la página para cada
+acción. JavaScript también se utiliza en sitios web más tradicionales para
+proporcionar distintas formas de interactividad e ingenio.
+Es importante tener en cuenta que JavaScript casi no tiene nada que ver con
+el lenguaje de programación llamado Java. El nombre similar fue inspirado por
+consideraciones de marketing en lugar de un buen juicio. Cuando se estaba
+introduciendo JavaScript, el lenguaje Java se estaba comercializando mucho y
+ganaba popularidad. Alguien pensó que era una buena idea intentar aprovechar
+este éxito. Ahora estamos atrapados con el nombre.
+Después de su adopción fuera de Netscape, se escribió un documento estándar
+para describir la forma en que debería funcionar el lenguaje JavaScript para
+que las diversas piezas de software que afirmaban soportar JavaScript pudieran
+asegurarse de que realmente proporcionaban el mismo lenguaje. Esto se llama
+el estándar ECMAScript, según la organización Ecma International que llevó a
+cabo la estandarización. En la práctica, los términos ECMAScript y JavaScript
+se pueden usar indistintamente, son dos nombres para el mismo lenguaje.
+Hay quienes dirán cosas terribles sobre JavaScript. Muchas de esas cosas
+son ciertas. Cuando me pidieron que escribiera algo en JavaScript por primera
+vez, rápidamente llegué a detestarlo. Aceptaba casi cualquier cosa que escribía
+pero lo interpretaba de una manera completamente diferente a lo que yo quería
+decir. Esto tenía mucho que ver con el hecho de que no tenía ni idea de lo que
+estaba haciendo, por supuesto, pero hay un problema real aquí: JavaScript es
+ridículamente liberal en lo que permite. La idea detrás de este diseño era que
+haría la programación en JavaScript más fácil para principiantes. En realidad,
+esto hace que encontrar problemas en tus programas sea más difícil porque el
+sistema no te los señalará.
+6
+Esta flexibilidad también tiene sus ventajas. Deja espacio para técnicas imposibles en lenguajes más rígidos y permite un estilo de programación agradable
+e informal. Después de aprender el lenguaje adecuadamente y trabajar con él
+durante un tiempo, ha llegado a realmente gustarme JavaScript.
+Ha habido varias versiones de JavaScript. La versión ECMAScript 3 fue la
+versión ampliamente soportada durante el ascenso al dominio de JavaScript,
+aproximadamente entre 2000 y 2010. Durante este tiempo, se estaba trabajando
+en una versión ambiciosa 4, la cual planeaba una serie de mejoras y extensiones
+radicales al lenguaje. Cambiar un lenguaje vivo y ampliamente utilizado de
+esa manera resultó ser políticamente difícil, y el trabajo en la versión 4 fue
+abandonado en 2008. Una versión 5, mucho menos ambiciosa, que solo realizaba
+algunas mejoras no controversiales, salió en 2009. En 2015, salió la versión 6,
+una actualización importante que incluía algunas de las ideas previstas para la
+versión 4. Desde entonces, hemos tenido nuevas actualizaciones pequeñas cada
+año.
+El hecho de que JavaScript esté evolucionando significa que los navegadores
+tienen que mantenerse constantemente al día. Si estás usando un navegador
+más antiguo, es posible que no admita todas las funciones. Los diseñadores
+del lenguaje se aseguran de no realizar cambios que puedan romper programas
+existentes, por lo que los nuevos navegadores aún pueden ejecutar programas
+antiguos. En este libro, estoy utilizando la versión 2023 de JavaScript.
+Los navegadores web no son las únicas plataformas en las que se utiliza
+JavaScript. Algunas bases de datos, como MongoDB y CouchDB, utilizan
+JavaScript como su lenguaje de secuencias de comandos y consulta. Varias
+plataformas para programación de escritorio y servidores, especialmente el
+proyecto Node.js (el tema del Capítulo 20), proporcionan un entorno para programar en JavaScript fuera del navegador.
+Código y qué hacer con él
+El código es el texto que constituye los programas. La mayoría de los capítulos
+en este libro contienen bastante código. Creo que leer código y escribir código
+son partes indispensables de aprender a programar. Intenta no solo echar un
+vistazo a los ejemplos, léelos atentamente y entiéndelos. Esto puede ser lento
+y confuso al principio, pero te prometo que pronto le tomarás la mano. Lo
+mismo ocurre con los ejercicios. No des por sentado que los entiendes hasta
+que hayas escrito realmente una solución que funcione.
+Te recomiendo que pruebes tus soluciones a los ejercicios en un intérprete de
+JavaScript real. De esta manera, obtendrás comentarios inmediatos sobre si lo
+7
+que estás haciendo funciona, y, espero, te tentarán a experimentar y a ir más
+allá de los ejercicios.
+La forma más sencilla de ejecutar el código de ejemplo en el libro —y de experimentar con él— es buscarlo en la versión en línea del libro en https://eloquentjavascript.net.Allí, puedes hacer clic en cualquier ejemplo de código para editarlo y ejecutarlo, y ver la salida que produce. Para trabajar en los ejercicios, ve a
+https://eloquentjavascript.net/code, que proporciona el código inicial para cada
+ejercicio de programación y te permite ver las soluciones.
+Ejecutar los programas definidos en este libro fuera del sitio web del libro
+requiere cierto cuidado. Muchos ejemplos son independientes y deberían funcionar en cualquier entorno de JavaScript. Pero el código en los capítulos posteriores a menudo está escrito para un entorno específico (navegador o Node.js)
+y solo puede ejecutarse allí. Además, muchos capítulos definen programas más
+grandes, y las piezas de código que aparecen en ellos dependen unas de otras o
+de archivos externos. El sandbox en el sitio web proporciona enlaces a archivos
+ZIP que contienen todos los scripts y archivos de datos necesarios para ejecutar
+el código de un capítulo dado.
+Visión general de este libro
+Este libro consta aproximadamente de tres partes. Los primeros 12 capítulos
+tratan sobre el lenguaje JavaScript. Los siguientes siete capítulos son acerca de
+los navegadores web y la forma en que se utiliza JavaScript para programarlos.
+Por último, dos capítulos están dedicados a Node.js, otro entorno para programar en JavaScript. Hay cinco capítulos de proyectos en el libro que describen
+programas de ejemplo más grandes para darte una idea de la programación
+real.
+La parte del lenguaje del libro comienza con cuatro capítulos que introducen
+la estructura básica del lenguaje JavaScript. Discuten las estructuras de control
+(como la palabra while que viste en esta introducción), las funciones (escribir
+tus propios bloques de construcción) y las estructuras de datos. Después de estos, serás capaz de escribir programas básicos. Luego, los Capítulos 5 y 6 introducen técnicas para usar funciones y objetos para escribir código más abstracto
+y mantener la complejidad bajo control. Después de un primer capítulo del
+proyecto que construye un robot de entrega rudimentario, la parte del lenguaje
+del libro continúa con capítulos sobre manejo de errores y corrección de errores,
+expresiones regulares (una herramienta importante para trabajar con texto),
+modularidad (otra defensa contra la complejidad) y programación asíncrona
+(tratando con eventos que toman tiempo). El segundo capítulo del proyecto,
+8
+donde implementamos un lenguaje de programación, concluye la primera parte
+del libro.
+La segunda parte del libro, de los capítulos 13 a 19, describe las herramientas
+a las que tiene acceso JavaScript en un navegador. Aprenderás a mostrar
+cosas en la pantalla (Capítulos 14 y 17), responder a la entrada del usuario
+(Capítulo 15) y comunicarte a través de la red (Capítulo 18). Nuevamente hay
+dos capítulos de proyecto en esta parte, construyendo un juego de plataformas
+y un programa de pintura de píxeles.
+El Capítulo 20 describe Node.js, y el Capítulo 21 construye un pequeño sitio
+web utilizando esa herramienta.
+Convenciones tipográficas
+En este libro, el texto escrito en una fuente monoespaciada representará elementos de programas. A veces estos son fragmentos autosuficientes, y a veces
+simplemente se refieren a partes de un programa cercano. Los programas (de
+los cuales ya has visto algunos) se escriben de la siguiente manera:
+function factorial(n) {
+if (n == 0) {
+return 1;
+} else {
+return factorial(n - 1) * n;
+}
+}
+A veces, para mostrar la salida que produce un programa, la salida esperada
+se escribe después, con dos barras inclinadas y una flecha al frente.
+console.log(factorial(8));
+// → 40320
+¡Buena suerte!
+9
+Chapter 1
+Valores, Tipos y Operadores
+“Debajo de la superficie de la máquina, el programa se mueve. Sin esfuerzo, se
+expande y contrae. En gran armonía, los electrones se dispersan y se reagrupan.
+Las formas en el monitor no son más que ondas en el agua. La esencia permanece invisible debajo.”
+—Master Yuan-Ma, El Libro de la Programación
+En el mundo de la computadora, solo existe data. Puedes leer data, modificar
+data, crear nueva data, pero aquello que no es data no puede ser mencionado.
+Toda esta data se almacena como largas secuencias de bits y, por lo tanto, es
+fundamentalmente similar.
+Los bits son cualquier tipo de cosas de dos valores, generalmente descritos
+como ceros y unos. Dentro de la computadora, toman formas como una carga
+eléctrica alta o baja, una señal fuerte o débil, o un punto brillante u opaco en la
+superficie de un CD. Cualquier pieza de información discreta puede reducirse
+a una secuencia de ceros y unos y por lo tanto representarse en bits.
+Por ejemplo, podemos expresar el número 13 en bits. Esto funciona de la
+misma manera que un número decimal, pero en lugar de diez dígitos diferentes,
+tenemos solo 2, y el peso de cada uno aumenta por un factor de 2 de derecha
+a izquierda. Aquí están los bits que componen el número 13, con los pesos de
+los dígitos mostrados debajo de ellos:
+0 0 0 0 1 1 0 1
+128 64 32 16 8 4 2 1
+Ese es el número binario 00001101. Sus dígitos no nulos representan 8, 4 y 1,
+y suman 13.
+Valores
+Imagina una mar de bits—un océano de ellos. Una computadora moderna
+típica tiene más de 100 mil millones de bits en su almacenamiento de datos
+volátil (memoria de trabajo). El almacenamiento no volátil (el disco duro o
+10
+equivalente) tiende a tener aún unos cuantos órdenes de magnitud más.
+Para poder trabajar con tales cantidades de bits sin perderse, los separamos
+en trozos que representan piezas de información. En un entorno de JavaScript,
+esos trozos se llaman valores. Aunque todos los valores están hechos de bits,
+desempeñan roles diferentes. Cada valor tiene un tipo que determina su función. Algunos valores son números, otros son fragmentos de texto, otros son
+funciones, y así sucesivamente.
+Para crear un valor, simplemente debes invocar su nombre. Esto es conveniente. No tienes que recolectar material de construcción para tus valores ni
+pagar por ellos. Solo solicitas uno, y ¡zas!, lo tienes. Por supuesto, los valores
+no se crean realmente de la nada. Cada uno tiene que almacenarse en algún
+lugar, y si deseas usar gigantescas cantidades de ellos al mismo tiempo, podrías
+quedarte sin memoria de computadora. Afortunadamente, este es un problema
+solo si los necesitas todos simultáneamente. Tan pronto como dejes de usar
+un valor, se disipará, dejando atrás sus bits para ser reciclados como material
+de construcción para la próxima generación de valores. El resto de este capítulo presenta los elementos atómicos de los programas de JavaScript, es decir,
+los tipos de valores simples y los operadores que pueden actuar sobre dichos
+valores.
+Números
+Los valores del tipo number son, como era de esperar, valores numéricos. En
+un programa de JavaScript, se escriben de la siguiente manera:
+13
+Usar esto en un programa hará que el patrón de bits para el número 13 exista
+en la memoria del ordenador.
+JavaScript utiliza un número fijo de bits, 64 de ellos, para almacenar un
+único valor numérico. Hay un número limitado de patrones que puedes hacer
+con 64 bits, lo que limita la cantidad de números diferentes que se pueden
+representar. Con N dígitos decimales, puedes representar 10N números. De
+manera similar, dada una cifra de 64 dígitos binarios, puedes representar 264
+números diferentes, que son alrededor de 18 mil trillones (un 18 seguido de 18
+ceros). Eso es mucho.
+La memoria de la computadora solía ser mucho más pequeña, y la gente
+solía utilizar grupos de 8 o 16 bits para representar sus números. Era fácil
+tener un desbordamiento accidental con números tan pequeños, terminando
+con un número que no encajaba en la cantidad dada de bits. Hoy en día,
+11
+incluso las computadoras que caben en tu bolsillo tienen mucha memoria, por
+lo que puedes utilizar trozos de 64 bits y solo necesitas preocuparte por el
+desbordamiento cuando lidias con números realmente astronómicos.
+Sin embargo, no todos los números enteros menores que 18 mil trillones
+encajan en un número de JavaScript. Esos bits también almacenan números
+negativos, por lo que un bit indica el signo del número. Un problema más
+grande es representar números no enteros. Para hacer esto, algunos de los bits
+se utilizan para almacenar la posición del punto decimal. El número entero
+máximo real que se puede almacenar está más en el rango de 9 cuatrillones (15
+ceros), que sigue siendo increíblemente grande.
+Los números fraccionarios se escriben usando un punto:
+9.81
+Para números muy grandes o muy pequeños, también puedes usar notación
+científica agregando una e (de exponente), seguida del exponente del número:
+2.998e8
+Eso es 2.998 × 108 = 299,800,000.
+Los cálculos con números enteros (también llamados enteros) que son más
+pequeños que los mencionados 9 cuatrillones siempre serán precisos. Desafortunadamente, los cálculos con números fraccionarios generalmente no lo son.
+Así como π (pi) no puede expresarse con precisión mediante un número finito
+de dígitos decimales, muchos números pierden algo de precisión cuando solo
+están disponibles 64 bits para almacenarlos. Es una lástima, pero solo causa
+problemas prácticos en situaciones específicas. Lo importante es ser consciente
+de esto y tratar los números digitales fraccionarios como aproximaciones, no
+como valores precisos.
+Aritmética
+Lo principal que se puede hacer con los números es la aritmética. Operaciones
+aritméticas como la suma o la multiplicación toman dos valores numéricos y
+producen un nuevo número a partir de ellos. Así es como se ven en JavaScript:
+100 + 4 * 11
+Los símbolos + y * se llaman operadores. El primero representa la suma y el
+segundo representa la multiplicación. Colocar un operador entre dos valores
+aplicará ese operador a esos valores y producirá un nuevo valor.
+¿Significa este ejemplo “Sumar 4 y 100, y luego multiplicar el resultado por
+11”, o se realiza primero la multiplicación antes de la suma? Como habrás
+12
+adivinado, la multiplicación se realiza primero. Como en matemáticas, puedes
+cambiar esto envolviendo la suma entre paréntesis:
+(100 + 4) * 11
+Para la resta, está el operador -. La división se puede hacer con el operador /.
+Cuando los operadores aparecen juntos sin paréntesis, el orden en que se
+aplican se determina por la precedencia de los operadores. El ejemplo muestra
+que la multiplicación se realiza antes que la suma. El operador / tiene la
+misma precedencia que *. Igualmente, + y - tienen la misma precedencia.
+Cuando varios operadores con la misma precedencia aparecen uno al lado del
+otro, como en 1 - 2 + 1, se aplican de izquierda a derecha: (1 - 2)+ 1.
+No te preocupes demasiado por estas reglas de precedencia. Cuando tengas
+dudas, simplemente agrega paréntesis.
+Hay un operador aritmético más, que quizás no reconozcas de inmediato.
+El símbolo % se utiliza para representar la operación de residuo. X % Y es el
+residuo de dividir X por Y. Por ejemplo, 314 % 100 produce 14, y 144 % 12 da
+0. La precedencia del operador de residuo es la misma que la de multiplicación
+y división. También verás a menudo a este operador referido como módulo.
+Números especiales
+Hay tres valores especiales en JavaScript que se consideran números pero no
+se comportan como números normales. Los dos primeros son Infinity y -
+Infinity, que representan el infinito positivo y negativo. Infinity - 1 sigue
+siendo Infinity, y así sucesivamente. Sin embargo, no confíes demasiado en
+los cálculos basados en infinito. No es matemáticamente sólido y rápidamente
+te llevará al siguiente número especial: NaN.
+NaN significa “no es un número”, aunque es un valor del tipo numérico. Obtendrás este resultado cuando, por ejemplo, intentes calcular 0 / 0 (cero dividido por cero), Infinity - Infinity, u cualquier otra operación numérica que
+no produzca un resultado significativo.
+Cadenas
+El siguiente tipo de dato básico es la cadena. Las cadenas se utilizan para
+representar texto. Se escriben encerrando su contenido entre comillas.
+`En el mar`
+"Acostado en el océano"
+'Flotando en el océano'
+13
+Puedes usar comillas simples, comillas dobles o acentos graves para marcar
+las cadenas, siempre y cuando las comillas al principio y al final de la cadena
+coincidan.
+Puedes poner casi cualquier cosa entre comillas para que JavaScript genere
+un valor de cadena a partir de ello. Pero algunos caracteres son más difíciles.
+Puedes imaginar lo complicado que sería poner comillas entre comillas, ya que
+parecerían el final de la cadena. Saltos de línea (los caracteres que obtienes al
+presionar enter) solo se pueden incluir cuando la cadena está entre acentos
+graves (\‘).
+Para poder incluir dichos caracteres en una cadena, se utiliza la siguiente
+notación: una barra invertida (\) dentro de un texto entre comillas indica que
+el carácter posterior tiene un significado especial. Esto se llama escapar el
+carácter. Una comilla que va precedida por una barra invertida no finalizará la
+cadena, sino que formará parte de ella. Cuando un carácter n aparece después
+de una barra invertida, se interpreta como un salto de línea. De manera similar,
+un t después de una barra invertida significa un carácter de tabulación. Toma
+la siguiente cadena:
+"Esta es la primera línea\nY esta es la segunda"
+Este es el texto real de esa cadena:
+Esta es la primera línea
+Y esta es la segunda
+Por supuesto, hay situaciones en las que deseas que una barra invertida en
+una cadena sea simplemente una barra invertida, no un código especial. Si
+dos barras invertidas van seguidas, se colapsarán juntas y solo quedará una en
+el valor de cadena resultante. Así es como se puede expresar la cadena “Un
+carácter de nueva línea se escribe como "\n".”:
+"Un carácter de nueva línea se escribe como \"\\n\"."
+Las cadenas también deben ser modeladas como una serie de bits para poder
+existir dentro de la computadora. La forma en que JavaScript lo hace se basa
+en el estándar Unicode. Este estándar asigna un número a prácticamente cada
+carácter que puedas necesitar, incluidos los caracteres griegos, árabes, japoneses, armenios, y así sucesivamente. Si tenemos un número para cada carácter,
+una cadena puede ser descrita por una secuencia de números. Y eso es lo que
+hace JavaScript.
+Sin embargo, hay una complicación: la representación de JavaScript utiliza
+16 bits por elemento de cadena, lo que puede describir hasta 216 caracteres difer14
+entes. Sin embargo, Unicode define más caracteres que eso —aproximadamente
+el doble, en este momento. Por lo tanto, algunos caracteres, como muchos
+emoji, ocupan dos “posiciones de caracteres” en las cadenas de JavaScript.
+Volveremos a esto en el Capítulo 5.
+Las cadenas no se pueden dividir, multiplicar o restar. El operador + se
+puede usar en ellas, no para sumar, sino para concatenar —unir dos cadenas.
+La siguiente línea producirá la cadena "concatenar":
+"con" + "cat" + "e" + "nar"
+Los valores de cadena tienen una serie de funciones asociadas (métodos) que
+se pueden utilizar para realizar otras operaciones con ellos. Hablaré más sobre
+esto en el Capítulo 4.
+Las cadenas escritas con comillas simples o dobles se comportan de manera
+muy similar, la única diferencia radica en qué tipo de comilla necesitas escapar
+dentro de ellas. Las cadenas entre acentos graves, generalmente llamadas template literals, pueden hacer algunas cosas más. Aparte de poder abarcar varias
+líneas, también pueden incrustar otros valores.
+`la mitad de 100 es ${100 / 2}`
+Cuando escribes algo dentro de ${} en una plantilla literal, su resultado se
+calculará, se convertirá en una cadena y se incluirá en esa posición. Este
+ejemplo produce “la mitad de 100 es 50”.
+Operadores unarios
+No todos los operadores son símbolos. Algunos se escriben como palabras. Un
+ejemplo es el operador typeof, que produce un valor de cadena que indica el
+tipo del valor que le proporcionas.
+console.log(typeof 4.5)
+// → number
+console.log(typeof "x")
+// → string
+Utilizaremos console.log en ejemplos de código para indicar que queremos ver
+el resultado de evaluar algo. Más sobre eso en el próximo capítulo.
+Los otros operadores mostrados hasta ahora en este capítulo operaron sobre
+dos valores, pero typeof toma solo uno. Los operadores que utilizan dos valores
+se llaman operadores binarios, mientras que aquellos que toman uno se llaman
+operadores unarios. El operador menos se puede usar tanto como un operador
+binario como un operador unario.
+15
+console.log(- (10 - 2))
+// → -8
+Valores booleanos
+A menudo es útil tener un valor que distinga solo entre dos posibilidades, como
+“sí" y “no” o “encendido” y “apagado”. Para este propósito, JavaScript tiene
+un tipo Booleano, que tiene solo dos valores, true y false, escritos como esas
+palabras.
+Comparación
+Aquí hay una forma de producir valores booleanos:
+console.log(3 > 2)
+// → true
+console.log(3 < 2)
+// → false
+Los signos > y < son símbolos tradicionales para “es mayor que” y “es menor
+que”, respectivamente. Son operadores binarios. Aplicarlos da como resultado
+un valor booleano que indica si son verdaderos en este caso.
+Las cadenas se pueden comparar de la misma manera:
+console.log("Aardvark" < "Zoroaster")
+// → true
+La forma en que se ordenan las cadenas es aproximadamente alfabética pero no
+es realmente lo que esperarías ver en un diccionario: las letras mayúsculas son
+siempre “menores” que las minúsculas, por lo que "Z" < "a", y los caracteres
+no alfabéticos (!, -, y así sucesivamente) también se incluyen en la ordenación.
+Al comparar cadenas, JavaScript recorre los caracteres de izquierda a derecha,
+comparando los códigos Unicode uno por uno.
+Otros operadores similares son >= (mayor o igual que), <= (menor o igual
+que), == (igual a), y != (no igual a).
+console.log("Granate" != "Rubí")
+// → true
+console.log("Perla" == "Amatista")
+// → false
+Solo hay un valor en JavaScript que no es igual a sí mismo, y ese es NaN (“no
+es un número”).
+16
+console.log(NaN == NaN)
+// → false
+NaN se supone que denota el resultado de un cálculo sin sentido y, como tal, no
+es igual al resultado de ningún otro cálculo sin sentido.
+Operadores lógicos
+También hay algunas operaciones que se pueden aplicar a los propios valores
+Booleanos. JavaScript soporta tres operadores lógicos: and (y), or (o), y not
+(no). Estos se pueden usar para “razonar” sobre valores Booleanos.
+El operador && representa el and lógico. Es un operador binario, y su resultado es verdadero solo si ambos valores dados son verdaderos.
+console.log(true && false)
+// → false
+console.log(true && true)
+// → true
+El operador || representa el or lógico. Produce verdadero si cualquiera de los
+valores dados es verdadero.
+console.log(false || true)
+// → true
+console.log(false || false)
+// → false
+Not se escribe con un signo de exclamación (!). Es un operador unario que
+invierte el valor dado; !true produce false y !false produce true.
+Al combinar estos operadores Booleanos con operadores aritméticos y otros
+operadores, no siempre es obvio cuándo se necesitan paréntesis. En la práctica,
+generalmente puedes avanzar sabiendo que de los operadores que hemos visto
+hasta ahora, || tiene la menor precedencia, luego viene &&, luego los operadores
+de comparación (>, ==, etc.), y luego el resto. Este orden ha sido elegido de
+tal manera que, en expresiones típicas como la siguiente, se necesiten la menor
+cantidad de paréntesis posible:
+1 + 1 == 2 && 10 * 10 > 50
+El último operador lógico que veremos no es unario ni binario, sino ternario,
+operando en tres valores. Se escribe con un signo de interrogación y dos puntos,
+así:
+console.log(true ? 1 : 2);
+// → 1
+17
+console.log(false ? 1 : 2);
+// → 2
+Este se llama el operador condicional (o a veces simplemente el operador
+ternario ya que es el único operador de este tipo en el lenguaje). El operador usa el valor a la izquierda del signo de interrogación para decidir cuál de
+los otros dos valores “elegir”. Si escribes a ? b : c, el resultado será b cuando
+a es verdadero y c de lo contrario.
+Valores vacíos
+Hay dos valores especiales, escritos null y undefined, que se utilizan para
+denotar la ausencia de un valor significativo. Son valores en sí mismos, pero
+no llevan ninguna información. Muchas operaciones en el lenguaje que no
+producen un valor significativo devuelven undefined simplemente porque tienen
+que devolver algún valor.
+La diferencia en el significado entre undefined y null es un accidente del
+diseño de JavaScript, y la mayoría de las veces no importa. En casos en los que
+realmente tienes que preocuparte por estos valores, recomiendo tratarlos como
+en su mayoría intercambiables.
+Conversión automática de tipos
+En la Introducción, mencioné que JavaScript se esfuerza por aceptar casi cualquier
+programa que le des, incluso programas que hacen cosas extrañas. Esto se demuestra claramente con las siguientes expresiones:
+console.log(8 * null)
+// → 0
+console.log("5" - 1)
+// → 4
+console.log("5" + 1)
+// → 51
+console.log("five" * 2)
+// → NaN
+console.log(false == 0)
+// → true
+Cuando se aplica un operador al tipo de valor “incorrecto”, JavaScript convertirá silenciosamente ese valor al tipo que necesita, utilizando un conjunto de
+reglas que a menudo no son las que deseas o esperas. Esto se llama coerción de
+tipos. El null en la primera expresión se convierte en 0 y el "5" en la segunda
+18
+expresión se convierte en 5 (de cadena a número). Sin embargo, en la tercera
+expresión, + intenta la concatenación de cadenas antes que la suma numérica,
+por lo que el 1 se convierte en "1" (de número a cadena).
+Cuando algo que no se corresponde con un número de manera obvia (como
+"five" o undefined) se convierte en un número, obtienes el valor NaN. Más
+operaciones aritméticas en NaN siguen produciendo NaN, así que si te encuentras
+con uno de estos en un lugar inesperado, busca conversiones de tipo accidentales.
+Cuando se comparan valores del mismo tipo usando el operador ==, el resultado es fácil de predecir: deberías obtener verdadero cuando ambos valores son
+iguales, excepto en el caso de NaN. Pero cuando los tipos difieren, JavaScript utiliza un conjunto de reglas complicado y confuso para determinar qué hacer. En
+la mayoría de los casos, simplemente intenta convertir uno de los valores al tipo
+del otro valor. Sin embargo, cuando null o undefined aparece en cualquiera
+de los lados del operador, produce verdadero solo si ambos lados son uno de
+null o undefined.
+console.log(null == undefined);
+// → true
+console.log(null == 0);
+// → false
+Ese comportamiento a menudo es útil. Cuando quieres probar si un valor tiene
+un valor real en lugar de null o undefined, puedes compararlo con null usando
+el operador == o !=.
+¿Qué sucede si quieres probar si algo se refiere al valor preciso false? Expresiones como 0 == false y "" == false también son verdaderas debido a la
+conversión automática de tipos. Cuando no deseas que ocurran conversiones
+de tipo, hay dos operadores adicionales: === y !==. El primero prueba si un
+valor es precisamente igual al otro, y el segundo prueba si no es precisamente
+igual. Por lo tanto, "" === false es falso como se espera. Recomiendo usar los
+operadores de comparación de tres caracteres defensivamente para evitar conversiones de tipo inesperadas que puedan complicarte las cosas. Pero cuando
+estés seguro de que los tipos en ambos lados serán los mismos, no hay problema
+en usar los operadores más cortos.
+Cortocircuito de operadores lógicos
+Los operadores lógicos && y || manejan valores de diferentes tipos de una manera peculiar. Convertirán el valor del lado izquierdo a tipo Booleano para
+decidir qué hacer, pero dependiendo del operador y el resultado de esa conver19
+sión, devolverán ya sea el valor original del lado izquierdo o el valor del lado
+derecho.
+El operador ||, por ejemplo, devolverá el valor de su izquierda cuando ese
+valor pueda convertirse en true y devolverá el valor de su derecha de lo contrario.
+Esto tiene el efecto esperado cuando los valores son Booleanos y hace algo
+análogo para valores de otros tipos.
+console.log(null || "usuario")
+// → usuario
+console.log("Agnes" || "usuario")
+// → Agnes
+Podemos utilizar esta funcionalidad como una forma de utilizar un valor predeterminado. Si tienes un valor que podría estar vacío, puedes colocar || después
+de él con un valor de reemplazo. Si el valor inicial se puede convertir en false,
+obtendrás el valor de reemplazo en su lugar. Las reglas para convertir cadenas
+y números en valores Booleanos establecen que 0, NaN y la cadena vacía ("")
+cuentan como false, mientras que todos los demás valores cuentan como true.
+Esto significa que 0 || -1 produce -1, y "" || "!?" da como resultado "!?".
+El operador ?? se asemeja a ||, pero devuelve el valor de la derecha solo si
+el de la izquierda es null o undefined, no si es algún otro valor que se pueda
+convertir en false. A menudo, este comportamiento es preferible al de ||.
+console.log(0 || 100);
+// → 100
+console.log(0 ?? 100);
+// → 0
+console.log(null ?? 100);
+// → 100
+El operador && funciona de manera similar pero en sentido contrario. Cuando
+el valor a su izquierda es algo que se convierte en false, devuelve ese valor, y
+de lo contrario devuelve el valor de su derecha.
+Otra propiedad importante de estos dos operadores es que la parte de su
+derecha se evalúa solo cuando es necesario. En el caso de true || X, no importa qué sea X, incluso si es una parte del programa que hace algo terrible, el
+resultado será true, y X nunca se evaluará. Lo mismo ocurre con false && X,
+que es false e ignorará X. Esto se llama evaluación de cortocircuito.
+El operador condicional funciona de manera similar. De los valores segundo
+y tercero, solo se evalúa el que sea seleccionado.
+20
+Resumen
+En este capítulo examinamos cuatro tipos de valores en JavaScript: números,
+cadenas, Booleanos y valores indefinidos. Tales valores son creados escribiendo
+su nombre (true, null) o valor (13, "abc"). Puedes combinar y transformar
+valores con operadores. Vimos operadores binarios para aritmética (+, -, *, /
+y %), concatenación de cadenas (+), comparación (==, !=, ===, !==, <, >, <=,
+>=) y lógica (&&, ||, ??), así como varios operadores unarios (- para negar un
+número, ! para negar lógicamente, y typeof para encontrar el tipo de un valor)
+y un operador ternario (?:) para elegir uno de dos valores basado en un tercer
+valor.
+Esto te proporciona suficiente información para usar JavaScript como una
+calculadora de bolsillo, pero no mucho más. El próximo capítulo comenzará a
+unir estas expresiones en programas básicos.
+21
+“Y mi corazón brilla intensamente bajo mi piel diáfana y
+translúcida, y tienen que administrarme 10cc de JavaScript para
+hacerme volver. (Respondo bien a las toxinas en la sangre.)
+¡Hombre, esa cosa sacará los melocotones de tus agallas!”
+—_why, Guía (conmovedora) de Ruby de Why
